@@ -50,3 +50,17 @@ Data Quality Summary
 - All cleaned datasets loaded into sqllite
 
 DAY 2 COMPLETED SUCCESSFULLY
+
+DAY 3 — Exploratory Data Analysis (EDA)
+- Created all charts on notebook
+-NAV trend analysis
+-AUM growth chart
+-SIP inflow time series
+-Category inflow heatmap
+-Investor demographics charts
+-Geographic distribution
+-Folio growth chart
+-Correlation matrix
+-Sector allocation donut chart
+-Document 10 insights
+DAY 3 COMPLETED SUCCESSFULLY
