@@ -30,3 +30,23 @@ Observations:
 Overall Status:
 DAY 1 COMPLETED SUCCESSFULLY
 
+DAY 2 — Data Cleaning + SQL Database Design
+Data Quality Summary
+
+1. NAV History
+- Dates converted to datetime
+- Duplicate records removed
+- NAV values validated (>0)
+
+2. Investor Transactions
+- Duplicate records removed
+- Transaction types standardized
+- KYC status validated
+
+3. Scheme Performance
+- Expense ratios validated
+- No anomalies found outside 0.1%–2.5%
+
+- All cleaned datasets loaded into sqllite
+
+DAY 2 COMPLETED SUCCESSFULLY

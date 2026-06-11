@@ -5,40 +5,23 @@ engine = create_engine(
     "sqlite:///data/db/bluestock_mf.db"
 )
 
-fund_master = pd.read_csv(
-    "data/raw/01_fund_master.csv"
+performance = pd.read_csv(
+    "data/processed/07_scheme_performance_clean.csv"
 )
 
-fund_master.to_sql(
-    "dim_fund",
+performance.to_sql(
+    "fact_performance",
     engine,
     if_exists="replace",
     index=False
 )
 
-# query = """
-# SELECT DISTINCT fund_house
-# FROM dim_fund;
-# """
-
-# # 3. Use Pandas to run the query and display the results
-# df = pd.read_sql(query, engine)
-# print(df.head())
-nav_history = pd.read_csv(
-    "data/processed/02_nav_history_clean.csv"
-)
-
-nav_history.to_sql(
-    "fact_nav",
-    engine,
-    if_exists="replace",
-    index=False
-)
-
-print("fact_nav loaded")
 query = """
-SELECT COUNT(*)
-FROM fact_nav
+SELECT
+    fund_house,
+    AVG(expense_ratio_pct) AS avg_expense_ratio
+FROM fact_performance
+GROUP BY fund_house;
 """
 
 df = pd.read_sql(query, engine)
